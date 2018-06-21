@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javalec.simulatedInvestment.mapper.CurrencyInfoMapper">
+    
+    <select id="list" resultType="com.javalec.simulatedInvestment.dto.CurrencyInfoDto">
+    	SELECT currency, nowPrice, closingPrice, maxPrice, minPrice, volume FROM CSI_CurrencyInfo
+    </select>
+    
+</mapper>

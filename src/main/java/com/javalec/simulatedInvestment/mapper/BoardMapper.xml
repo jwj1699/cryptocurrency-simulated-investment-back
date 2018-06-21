@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javalec.simulatedInvestment.mapper.BoardMapper">
+    
+    <select id="list" resultType="com.javalec.simulatedInvestment.dto.BoardDto">
+    	SELECT BNO, BCATEGORY, BTITLE, BCONTENT, BUSERID, BDATE, BHIT FROM CSI_BOARD
+    </select>
+    
+    <select id="contentView" resultType="com.javalec.simulatedInvestment.dto.BoardDto">
+    	SELECT bNo, bCategory, bTitle, bContent, bUserId, bDate, bHit FROM CSI_Board WHERE bNo=#{param1}
+    </select>
+    
+    <insert id="write">
+    	INSERT INTO CSI_Board(bNo, bCategory, bTitle, bContent, bUserId, bHit) VALUES(CSI_Board_seq.nextval,#{param1},#{param2},#{param3},#{param4},0)
+    </insert>
+    
+    <delete id="delete">
+    	DELETE FROM CSI_Board WHERE bNo=#{param1}
+    </delete>
+    
+    <update id="upHit">
+    	UPDATE CSI_Board SET bHit = bHit + 1 WHERE bNo=#{param1}
+    </update>
+</mapper>

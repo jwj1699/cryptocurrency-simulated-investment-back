@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javalec.simulatedInvestment.mapper.UserMapper">
+    
+    <insert id="signup">
+    	INSERT INTO CSI_UserInfo(userId, userPw, userName, userEmail, userCashAmonut) VALUES(#userId:VARCHAR#,#userPw:VARCHAR#,#userName:VARCHAR#,#userEmail:VARCHAR#,10000000)
+    </insert>
+    
+    <select id="login">
+    	SELECT userId, userName, userEmail, userCashAmonut FROM CSI_UserInfo WHERE userId=#{param1} and userPw=${param1}
+    </select>
+    
+</mapper>
