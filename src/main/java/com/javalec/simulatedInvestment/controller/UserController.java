@@ -38,12 +38,8 @@ public class UserController {
 	@PostMapping(value = "/signupPost")
 	@CrossOrigin(origins = "http://localhost:3000")
 	public String signupPost(HttpServletRequest request, Model model) {
-		System.out.println("signupPost"+request.getParameter("userId"));
-		System.out.println();
-		System.out.println("userId"+request.getAttribute("userId"));
-		System.out.println("userPw"+request.getAttribute("userPw"));
-		System.out.println("userName"+request.getAttribute("userName"));
-		System.out.println("userEmail"+request.getAttribute("userEmail"));
+		//System.out.println("signupPost"+request.getParameter("userId"));
+		System.out.println("signupPost 실행");
 
 		UserMapper dao = sqlSession.getMapper(UserMapper.class);
 		dao.signup(request.getParameter("userId"), request.getParameter("userPw"), request.getParameter("userName"), request.getParameter("userEmail"));
@@ -66,20 +62,23 @@ public class UserController {
 	public String loginPost(HttpServletRequest request, Model model) {
 		System.out.println("loginPost");
 		
-		Enumeration eParam = request.getParameterNames();
+		/*Enumeration eParam = request.getParameterNames();
         
         while(eParam.hasMoreElements()) {
             String pName = (String)eParam.nextElement();
             String pValue = request.getParameter(pName);
             
             System.out.println(pName + " : " + pValue);
-        }
+        }*/
+        
+        System.out.println("userId="+request.getParameter("userId"));
+        System.out.println("userPw="+request.getParameter("userPw"));
 
 
 		UserMapper dao = sqlSession.getMapper(UserMapper.class);
 		UserDto dto = dao.login(request.getParameter("userId"), request.getParameter("userPw"));
 		
-		return gson.toJson(gson);
+		return gson.toJson(dto);
 	}
 	
 	
