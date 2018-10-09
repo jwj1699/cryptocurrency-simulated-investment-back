@@ -10,4 +10,23 @@
     	SELECT currency, nowPrice, closingPrice, maxPrice, minPrice, volume FROM CSI_CurrencyInfo
     </select>
     
+    <select id="BTC" resultType="com.javalec.simulatedInvestment.dto.CurrencyInfoDto">
+    	SELECT currency, nowPrice, closingPrice, maxPrice, minPrice, volume FROM CSI_CurrencyInfo WHERE currency='BTC'
+    </select>
+    
+    <select id="ETH" resultType="com.javalec.simulatedInvestment.dto.CurrencyInfoDto">
+    	SELECT currency, nowPrice, closingPrice, maxPrice, minPrice, volume FROM CSI_CurrencyInfo WHERE currency='ETH'
+    </select>
+    
+    <select id="ETC" resultType="com.javalec.simulatedInvestment.dto.CurrencyInfoDto">
+    	SELECT currency, nowPrice, closingPrice, maxPrice, minPrice, volume FROM CSI_CurrencyInfo WHERE currency='ETC'
+    </select>
+    
+    <select id="XRP" resultType="com.javalec.simulatedInvestment.dto.CurrencyInfoDto">
+    	SELECT currency, nowPrice, closingPrice, maxPrice, minPrice, volume FROM CSI_CurrencyInfo WHERE currency='XRP'
+    </select>
+    
+    <select id="LTC" resultType="com.javalec.simulatedInvestment.dto.CurrencyInfoDto">
+    	SELECT currency, nowPrice, closingPrice, maxPrice, minPrice, volume FROM CSI_CurrencyInfo WHERE currency='LTC'
+    </select>
 </mapper>
