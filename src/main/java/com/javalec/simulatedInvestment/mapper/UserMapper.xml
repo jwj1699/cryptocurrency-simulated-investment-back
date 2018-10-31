@@ -14,4 +14,13 @@
     	SELECT userId, userName, userEmail, userCashAmonut FROM CSI_UserInfo WHERE userId=#{param1} and userPw=#{param2}
     </select>
     
+    <select id="wallet" resultType="com.javalec.simulatedInvestment.dto.UserWalletDto">
+    	SELECT 
+    		userId, BTC_purchasePrice, BTC_amount, ETH_purchasePrice, ETH_amount, ETC_purchasePrice, ETC_amount, XRP_purchasePrice, XRP_amount, LTC_purchasePrice, LTC_amount 
+    	FROM 
+    		CSI_UserWallet
+    	WHERE
+    		userId=#{param1}
+    </select>
+    
 </mapper>
