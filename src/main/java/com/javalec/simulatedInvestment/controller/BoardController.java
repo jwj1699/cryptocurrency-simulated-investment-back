@@ -1,7 +1,10 @@
 package com.javalec.simulatedInvestment.controller;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
+=======
+>>>>>>> 20ed4dba9ac8fcaf0e6865e1b11d4bd76f527b0e
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -12,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
-import com.javalec.simulatedInvestment.dto.CurrencyInfoDto;
 import com.javalec.simulatedInvestment.mapper.BoardMapper;
+<<<<<<< HEAD
 import com.javalec.simulatedInvestment.mapper.CurrencyInfoMapper;
+=======
+>>>>>>> 20ed4dba9ac8fcaf0e6865e1b11d4bd76f527b0e
 
 /**
  */

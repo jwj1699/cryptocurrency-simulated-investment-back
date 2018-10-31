@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 import com.javalec.simulatedInvestment.dto.CurrencyInfoDto;
+<<<<<<< HEAD
+=======
+import com.javalec.simulatedInvestment.dto.OrderbookDto;
+>>>>>>> 20ed4dba9ac8fcaf0e6865e1b11d4bd76f527b0e
 import com.javalec.simulatedInvestment.mapper.CurrencyInfoMapper;
 
 @RestController
@@ -23,6 +27,12 @@ public class CurrencyController {
 	
 	Gson gson = new Gson();
 	
+<<<<<<< HEAD
+=======
+	@Autowired
+	OrderbookDto orderbookDto;
+	
+>>>>>>> 20ed4dba9ac8fcaf0e6865e1b11d4bd76f527b0e
 	@GetMapping("/")
 	@CrossOrigin(origins = "http://localhost:3000")
 	public String tabledata(Model model) {

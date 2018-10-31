@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javalec.simulatedInvestment.mapper.OrderbookMapper">
+    
+    <insert id="insert">
+    	INSERT INTO CSI_ETH_orderbook(price, quantity) VALUES(#{param1}, #{param2})
+    </insert>
+    
+    <select id="check" resultType="com.javalec.simulatedInvestment.dto.BidDto">
+    	SELECT price, quantity FROM CSI_ETH_orderbook WHERE price=#{param1}
+    </select>
+    
+    <update id="update">
+    	UPDATE CSI_ETH_orderbook SET quantity=#{param2} where price=#{param1}
+    </update>
+    
+    
+</mapper>
